@@ -9,15 +9,12 @@ require './controllers/ApplicationController'
 require './controllers/AlbumController'
 require './controllers/UserController'
 
-
-
-
 run Sinatra::Application
 
 ActiveRecord::Base.establish_connection(
 	adapter: 'postgresql',
-	database: 'products'
+	database: 'record_collections'
 	)
 
-map('./users'){run UserController}
-map('./albums'){run AlbumController}
+map('/users'){run UserController}
+map('/albums'){run AlbumController}
