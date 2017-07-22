@@ -11,12 +11,12 @@ require 'SecureRandom'
 
 		user.email = user_details["email"]
 		user.password = user_details["password"]
-		# user.token = SecureRandom.hex
 		user.screen_name = user_details["screen_name"]
-
+		user.token = SecureRandom.hex
+		
 		user.save
 		user.to_json
-		"success"
+		
 	end
 
 	#post request to users/login
