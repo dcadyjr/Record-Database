@@ -21,7 +21,7 @@ require 'SecureRandom'
 
 	#post request to users/login
 	post '/login' do
-
+		content_type :json
 		user_details = JSON.parse(request.body.read)
 		user = User.find_by({email: user_details["email"]})
 		if user && user.authenticate(user_details["password"])

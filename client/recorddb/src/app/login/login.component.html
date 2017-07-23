@@ -1,3 +1,15 @@
-<p>
-  login works!
-</p>
+<div id="register">
+	<h3>Ready to Rock?</h3>
+	<input [(ngModel)]="newUser.email" placeholder="email"/>
+	<input [(ngModel)]="newUser.password" placeholder="create password"/>
+	<input [(ngModel)]="newUser.screen_name" placeholder="screen name">
+	<button (click)="register()">Submit</button>
+</div>
+
+<div id="login">
+	<h3>Welcome Back</h3>
+	<input [(ngModel)]="user.email" placeholder="email"/>
+	<input [(ngModel)]="user.password" placeholder="password">
+	<button (click)="login()">Login</button>
+
+</div>
