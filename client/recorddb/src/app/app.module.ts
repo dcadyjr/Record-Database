@@ -5,19 +5,20 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './list.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-	path: 'list'
-	component: ListComponent
-  },
+	path: 'login',
+	component: LoginComponent
+  }
 
 ]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
