@@ -1,5 +1,9 @@
 <div>
 	<h2 id="searchAlbums">Search Albums</h2>
-	<input [(ngModel)]="Newsearch" placeholder="artist or album"/>
+	<input [(ngModel)]="newSearch.name" placeholder="artist or album"/>
 	<button (click)="search()">Search</button>
+</div>
+
+<div>
+	<img src="{{album.image_url}}">
 </div>

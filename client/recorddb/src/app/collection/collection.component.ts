@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
 
+class Album{
+	id: number;
+	name: string;
+	artist: string;
+	release_year: number;
+	image_url: string;
+}
+
 @Component({
   selector: 'app-collection',
   templateUrl: './collection.component.html',
@@ -15,8 +23,12 @@ export class CollectionComponent implements OnInit {
   search(){
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
-  		let result = response.json();
-  		console.log(result.results[1].thumb);
+  		let searchResults = [];
+
+		let result = response.json();
+
+
+  		
   		
   		
   	})
