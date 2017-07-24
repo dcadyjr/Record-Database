@@ -6,11 +6,16 @@ import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { CollectionComponent } from './collection/collection.component';
 
 const routes: Routes = [
   {
 	path: 'login',
 	component: LoginComponent
+  },
+  {
+   path: 'collection',
+   component: CollectionComponent
   }
 
 ]
@@ -18,7 +23,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CollectionComponent
   ],
   imports: [
     BrowserModule,
