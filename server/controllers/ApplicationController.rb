@@ -8,17 +8,20 @@ class ApplicationController < Sinatra::Base
 	end
 
 
-	before do
+	 before do
 		response['Access-Control-Allow-Origin'] = '*'
 		content_type :json 
 
 		path = request.fullpath.split("?")[0]
 
+
 		if ['users/login', '/users/register'].include?(path) || request.request_method == 'OPTIONS'
 			pass
 		end
+		content_type :json
 		token = params[:token]
-		user = User.find_by(token: token)
+		user = User.find_by(token: token).to_json
+		
 		if user
 			pass
 		else

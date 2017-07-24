@@ -5,7 +5,7 @@ require 'SecureRandom'
 	#post request to /users/register
 
 	post '/register' do 
-
+		content_type :json
 		user_details = JSON.parse(request.body.read)
 		user = User.new
 
@@ -23,12 +23,15 @@ require 'SecureRandom'
 	post '/login' do
 		content_type :json
 		user_details = JSON.parse(request.body.read)
+		
 		user = User.find_by({email: user_details["email"]})
 		if user && user.authenticate(user_details["password"])
+			user.token = SecureRandom.hex
+			user.save
 			user.to_json
-			"success"
+			
 		else
-			"ACCESS DENIED"
+			{message: "Access Denied"}
 		end
 	end
 end
