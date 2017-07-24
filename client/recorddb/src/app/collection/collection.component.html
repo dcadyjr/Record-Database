@@ -4,6 +4,9 @@
 	<button (click)="search()">Search</button>
 </div>
 
-<div>
-	<img src="{{album.image_url}}">
+<div *ngFor="let bob of bobs">
+
+	<img src="{{this.bob.thumb}}">
+	<li>Title: {{this.bob.title}}</li>
+	<li>{{this.uri}}</li>
 </div>

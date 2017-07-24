@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
+import { NgForOf } from '@angular/common';
 
 class Album{
 	id: number;
@@ -17,20 +18,15 @@ class Album{
 })
 export class CollectionComponent implements OnInit {
 	newSearch = {};
+	bobs = [];
 
   constructor(private http: Http, private router: Router) { }
 
   search(){
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
-  		let searchResults = [];
-
-		let result = response.json();
-
-
-  		
-  		
-  		
+  		this.bobs = response.json().results;
+  		console.log(this.bobs)
   	})
   }
 
