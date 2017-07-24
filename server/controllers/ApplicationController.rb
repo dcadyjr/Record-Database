@@ -18,10 +18,11 @@ class ApplicationController < Sinatra::Base
 		if ['users/login', '/users/register'].include?(path) || request.request_method == 'OPTIONS'
 			pass
 		end
-		content_type :json
+		
 		token = params[:token]
 		user = User.find_by(token: token).to_json
-		
+		puts "this is the #{token}"
+		puts "this is the #{user}"
 		if user
 			pass
 		else

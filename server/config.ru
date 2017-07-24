@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require 'discogs-wrapper'
 
 require './models/AlbumModel'
 require './models/UserModel'

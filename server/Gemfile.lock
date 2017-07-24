@@ -15,10 +15,19 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.11)
     concurrent-ruby (1.0.5)
+    discogs-wrapper (2.3.0)
+      hashie (~> 3.0)
+      httparty (~> 0.14)
+      oauth (~> 0.5.1)
+    hashie (3.5.6)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
     i18n (0.8.6)
     json (2.1.0)
     minitest (5.10.3)
+    multi_xml (0.6.0)
     mustermann (1.0.0)
+    oauth (0.5.3)
     pg (0.21.0)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -41,6 +50,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  discogs-wrapper
   json
   pg
   sinatra
