@@ -6,17 +6,12 @@
 
 <div *ngFor="let bob of bobs">
 
-	<img href="www.google.com" (click)="getDetails()" src="{{this.bob.thumb}}">
+	<a (click)="getDetails(bob)">
+		<img src="{{bob.thumb}}">
+		<div>{{bob.resource_url}}</div>
+	</a>
 
-	<li>Title: {{this.bob.title}}</li>
+	<li>Title: {{bob.title}}</li>
 </div>
 
-<div *ngFor="let detail of details">
 
-	<li>{{this.title}}
-	<li>{{this.detail.artist.name}}</li>
-	<li>{{this.detail.year}}</li>
-	<li>{{tracklist.title}}</li>
-	<li>{{tracklist.duration}}</li>
-
-</div>

@@ -27,15 +27,12 @@ export class CollectionComponent implements OnInit {
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
   		this.bobs = response.json().results;
+  		// console.log(this.bobs);
   	})
   }
 
-  getDetails(){
-  	this.http.get('this.bobs.resource_url').subscribe(response => {
-
-  		this.details = response.json();
-
-  	})
+  getDetails(album){
+  	this.router.navigate(['/details', album.id])
   }
 
   ngOnInit() {

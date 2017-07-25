@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CollectionComponent } from './collection/collection.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
    path: 'collection',
    component: CollectionComponent
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent
   }
 
 ]
@@ -24,7 +29,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    CollectionComponent
+    CollectionComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+require 'net/http'
+require 'json'
 
 class AlbumController < ApplicationController
 
@@ -36,6 +38,26 @@ class AlbumController < ApplicationController
 
 		# "success"
 	end
+
+	get '/details/:id' do
+
+		#details = JSON.parse(request.body.read)
+
+
+		id = params[:id]
+		url = 'https://api.discogs.com/masters/' + id
+		uri = URI(url)
+
+		response = Net::HTTP.get(uri)
+		results = JSON.parse(response)
+		results.to_json
+
+		# url = 'details.link'
+	
+
+
+	end
+
 
 	patch '/:id' do
 
