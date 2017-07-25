@@ -1,9 +1,10 @@
 <div>
 
 	<li>{{details.title}}</li>
-	<li>{{details.name}}</li>
+	<li>{{details.artists[0].name}}</li>
 	<li>{{details.year}}</li>
-	<li>{{details.tracklist.title}}</li>
-	<li>{{details.tracklist.duration}}</li>
+	<div *ngFor="let track of tracks">
+	<li>{{track.title}} {{track.duration}}</li>
+	</div>
 
 </div>
