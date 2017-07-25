@@ -18,13 +18,14 @@ class AlbumController < ApplicationController
 	#post request to /albums. saves a new album to the users account
 	post '/' do
 		new_search = JSON.parse(request.body.read)
-		puts "#{new_search}"
+		
 
 		auth_wrapper = Discogs::Wrapper.new("My awesome web app", user_token: "JXIHTcvmYrJmSxdOHTOOsynymapkXxGjhsikOWLm")
-		search       = auth_wrapper.search("#{new_search}", :per_page => 10, :type => :release)
-
+		search       = auth_wrapper.search(new_search["name"], :per_page => 10, :type => "master", :sort =>  "score", :sort_order => "desc")
+		
 		search.to_json
 		
+		#https://api.discogs.com/database/search?sort=score&f=json&q=%7B%22name%22%3D%3E%22Led+Zeppelin%22%7D&token=JXIHTcvmYrJmSxdOHTOOsynymapkXxGjhsikOWLm&sort_order=desc&per_page=10&type=release&page=19
 
 		# 	# new_album = JSON.parse(request.body.read)
 		# 	# new_album.to_json

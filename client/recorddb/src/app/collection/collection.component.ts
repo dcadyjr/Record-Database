@@ -19,6 +19,7 @@ class Album{
 export class CollectionComponent implements OnInit {
 	newSearch = {};
 	bobs = [];
+	details = [];
 
   constructor(private http: Http, private router: Router) { }
 
@@ -26,7 +27,14 @@ export class CollectionComponent implements OnInit {
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
   		this.bobs = response.json().results;
-  		console.log(this.bobs)
+  	})
+  }
+
+  getDetails(){
+  	this.http.get('this.bobs.resource_url').subscribe(response => {
+
+  		this.details = response.json();
+
   	})
   }
 
