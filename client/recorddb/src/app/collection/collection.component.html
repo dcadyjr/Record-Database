@@ -8,10 +8,11 @@
 
 	<a (click)="getDetails(bob)">
 		<img src="{{bob.thumb}}">
-		<div>{{bob.resource_url}}</div>
 	</a>
+	<li>{{bob.title}}</li>
+	 <li>{{bob.year}}</li>
 
-	<li>Title: {{bob.title}}</li>
+	<button (click)="saveAlbum(bob)">Save</button>
 </div>
 
 

@@ -19,17 +19,13 @@ export class DetailsComponent implements OnInit {
   	let id = this.route.snapshot.params.id;
 
 	this.http.get('http://localhost:9393/albums/details/' + id).subscribe(response => {
+  		
   		this.details = response.json();
-  		// this.artists = response.json().artists[0];
   		this.tracks = response.json().tracklist;
-  		console.log(this.details);
-  		// console.log(this.artists);
-  		console.log(this.tracks[1].duration);
   		
   	})
   }
-
-
+  
   ngOnInit() {
   }
 

@@ -21,8 +21,6 @@ class ApplicationController < Sinatra::Base
 		
 		token = params[:token]
 		user = User.find_by(token: token).to_json
-		puts "this is the #{token}"
-		puts "this is the #{user}"
 		if user
 			pass
 		else
