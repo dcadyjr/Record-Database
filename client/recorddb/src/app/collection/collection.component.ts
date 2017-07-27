@@ -5,10 +5,11 @@ import { NgForOf } from '@angular/common';
 
 class Album{
 	id: number;
-	title: string;
-	resource_url: string;
-	year: number;
-	thumb: string;
+	name: string;
+	artist: string;
+	release_year: number;
+	image_url: string;
+	tracks: string;
 }
 
 @Component({
@@ -25,12 +26,14 @@ export class CollectionComponent implements OnInit {
 	
 	
 
-  constructor(private http: Http, private router: Router) { }
+  constructor(private http: Http, private router: Router) {
+   }
 
   search(){
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
   		this.bobs = response.json().results;
+  		console.log(this.bobs);
   	})
   }
 
@@ -38,7 +41,7 @@ export class CollectionComponent implements OnInit {
   	this.router.navigate(['/details', album.id])
   }
 
-  saveAlbum(newAlbum){
+  saveAlbum(){
   	this.http.post('http://localhost:9393/albums/save', this.newAlbum).subscribe(response => {
   		{this.albums = response.json()}
   		console.log(this.newAlbum);
@@ -47,6 +50,9 @@ export class CollectionComponent implements OnInit {
   }
 
   ngOnInit() {
+  	this.http.get('http://localhost:9393/albums').subscribe(response => {
+  		this.albums = response.json()
+  	})
   }
 
 }

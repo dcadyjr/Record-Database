@@ -10,9 +10,19 @@
 		<img src="{{bob.thumb}}">
 	</a>
 	<li>{{bob.title}}</li>
-	 <li>{{bob.year}}</li>
-
+	<li>{{bob.year}}</li>
 	<button (click)="saveAlbum(bob)">Save</button>
+</div>
+
+<h1>Collection</h1>
+<div *ngFor="let album of albums">
+	<img id='albumImage' src="{{album.image_url}}">
+	<div>
+		<h3>{{album.name}}</h3>
+		<h3>{{album.artist}}</h3>
+		<h4>{{album.release_year}}</h4>
+	</div>
+
 </div>
 
 
