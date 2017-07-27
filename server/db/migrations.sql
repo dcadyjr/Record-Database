@@ -7,7 +7,7 @@ email VARCHAR(255), password_digest VARCHAR(255),
 screen_name VARCHAR(255));
 
 CREATE TABLE albums (id SERIAL PRIMARY KEY, name VARCHAR(255), artist VARCHAR(255), release_year INTEGER, image_url VARCHAR(255),
- detail_url VARCHAR(255));
+ detail_url VARCHAR(255), discogs_id INT);
 
 CREATE TABLE users_records (
 id SERIAL PRIMARY KEY,

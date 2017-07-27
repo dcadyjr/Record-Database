@@ -34,4 +34,13 @@ require 'SecureRandom'
 			{message: "Access Denied"}
 		end
 	end
+
+	delete '/:id' do
+
+		id = params[:id]
+		user = User.find(id)
+		user.destroy
+		 "success"
+
+	end
 end

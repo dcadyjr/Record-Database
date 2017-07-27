@@ -24,15 +24,16 @@ class AlbumController < ApplicationController
 
 		auth_wrapper = Discogs::Wrapper.new("My awesome web app", user_token: "JXIHTcvmYrJmSxdOHTOOsynymapkXxGjhsikOWLm")
 		search       = auth_wrapper.search(new_search["name"], :per_page => 10, :type => "master", :sort =>  "score", :sort_order => "desc")
-		
+		puts search
 		search.to_json
 		
 	end
 
+	#get request to /albums/details/id to get the details for each album in the search
 	get '/details/:id' do
 
 		id = params[:id]
-		url = 'https://api.discogs.com/masters/' + id
+		url = 'https://api.discogs.com/masters/' + id + '?token=JXIHTcvmYrJmSxdOHTOOsynymapkXxGjhsikOWLm'
 		uri = URI(url)
 
 		response = Net::HTTP.get(uri)
@@ -42,24 +43,23 @@ class AlbumController < ApplicationController
 
 	end
 
+	#get request to albums/saveddetails to get details for each saved album
 	get '/saveddetails' do
 		request_body = JSON.parse(request.body.read)
-		puts request_body
+
 	end
 
+	# post request to /albums to save a album to your collection
 	post '/save' do
 		response['Access-Control-Allow-Origin'] = '*'
 
 		request_body = JSON.parse(request.body.read)
 		
 		album = Album.new
-		#album_artist = request_body["title"].split(%r{ -\s*})[0]
 		album.artist = request_body["title"].split(%r{ -\s*})[0]
-		#album_name = request_body["title"].split(%r{ -\s*})[1]
 		album.name = request_body["title"].split(%r{ -\s*})[1]
 		album.release_year = request_body["year"]
 		album.image_url = request_body["thumb"]
-		#id = request_body["id"].to_s
 		album.detail_url = 'https://api.discogs.com/masters/' + request_body["id"].to_s
 		album.discogs_id = request_body["id"]
 		album.save
@@ -77,9 +77,9 @@ class AlbumController < ApplicationController
 		album.save
 		album.to_json
 
-		"success"
 	end
 
+	# delete request to albums/id to delete an album from your collection
 	delete '/:id' do
 
 		id = params[:id]
@@ -88,7 +88,6 @@ class AlbumController < ApplicationController
 		albums = Album.all
 		albums.to_json
 
-		"success"
 	end
 
 

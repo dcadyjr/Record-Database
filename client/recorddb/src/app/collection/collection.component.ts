@@ -10,6 +10,7 @@ class Album{
 	release_year: number;
 	image_url: string;
 	detail_url: string;
+  discogs_id: number;
 }
 
 @Component({
@@ -21,7 +22,7 @@ export class CollectionComponent implements OnInit {
 	albums: Album[] = [];
 	newAlbum: Album = new Album();
 	newSearch = {};
-	bobs = [];
+	records = [];
 	details = [];
 	
 	
@@ -32,8 +33,7 @@ export class CollectionComponent implements OnInit {
   search(){
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
-  		this.bobs = response.json().results;
-  		console.log(this.bobs);
+  		this.records = response.json().results;
   	})
   }
 
@@ -48,12 +48,13 @@ export class CollectionComponent implements OnInit {
   saveAlbum(album){
   	this.http.post('http://localhost:9393/albums/save', album).subscribe(response => {
   		{this.albums = response.json()}
-  		console.log(this.newAlbum);
   	})
 
   }
-  delete(){
-
+  delete(album){
+    this.http.delete('http://localhost:9393/albums/' + album).subscribe(response => {
+      this.albums = response.json()
+    })
   }
 
   ngOnInit() {
