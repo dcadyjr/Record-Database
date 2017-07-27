@@ -44,9 +44,16 @@ class AlbumController < ApplicationController
 
 	post '/save' do
 		response['Access-Control-Allow-Origin'] = '*'
-
+		puts request_body
 		request_body = JSON.parse(request.body.read)
-		album = Album.new(request_body)
+		album = Album.new
+		album_artist = request_body["title"].split(%r{ -\s*})[0]
+		album.artist = album_artist
+		album_name = request_body["title"].split(%r{ -\s*})[1]
+		album.name = album_name
+		album.release_year = request_body["year"]
+		album.image_url = request_body["thumb"]
+		#album.detail_url = request_body[]
 		album.save
 		Album.all.to_json
 

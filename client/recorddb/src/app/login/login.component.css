@@ -1,6 +1,3 @@
-
-
-
 #container{
 	
 	background-image: url("http://assets.dornob.com/wp-content/uploads/2015/06/record-collection.jpg");
@@ -14,6 +11,10 @@
 	align-items: center;
 }
 
-h1{
+h3{
 	margin-left: 50%;
+	color: white;
+}
+h1{
+	color: white;
 }

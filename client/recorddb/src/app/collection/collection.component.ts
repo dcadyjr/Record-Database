@@ -41,8 +41,8 @@ export class CollectionComponent implements OnInit {
   	this.router.navigate(['/details', album.id])
   }
 
-  saveAlbum(){
-  	this.http.post('http://localhost:9393/albums/save', this.newAlbum).subscribe(response => {
+  saveAlbum(album){
+  	this.http.post('http://localhost:9393/albums/save', album).subscribe(response => {
   		{this.albums = response.json()}
   		console.log(this.newAlbum);
   	})
