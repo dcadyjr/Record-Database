@@ -1,9 +1,12 @@
+<button (click)="logout()">logout</button>
+
 <div>
 	<h2 id="searchAlbums">Search Albums</h2>
 	<input [(ngModel)]="newSearch.name" placeholder="artist or album"/>
 	<button (click)="search()">Search</button>
 </div>
 
+<!-- put this in the modal body -->
 <div *ngFor="let record of records">
 
 	<a (click)="getDetails(record)">

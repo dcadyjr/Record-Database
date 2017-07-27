@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit {
   register(){
   	this.http.post('http://localhost:9393/users/register', this.newUser).subscribe(response => {
   		window.localStorage.setItem('token', response.json().token)
-  		console.log("success");
+      this.router.navigate(['/collection'])
+
   	})
   }
 

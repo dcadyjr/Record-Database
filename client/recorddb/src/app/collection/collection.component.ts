@@ -24,6 +24,7 @@ export class CollectionComponent implements OnInit {
 	newSearch = {};
 	records = [];
 	details = [];
+  // modal == False
 	
 	
 
@@ -55,6 +56,11 @@ export class CollectionComponent implements OnInit {
     this.http.delete('http://localhost:9393/albums/' + album).subscribe(response => {
       this.albums = response.json()
     })
+  }
+
+  logout(){
+    window.localStorage.clear();
+    this.router.navigate(['/login'])
   }
 
   ngOnInit() {

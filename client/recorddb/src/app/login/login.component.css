@@ -3,18 +3,104 @@
 	background-image: url("http://assets.dornob.com/wp-content/uploads/2015/06/record-collection.jpg");
 	height: 100vh;
 	background-size: cover;
-	margin-bottom: 50px;
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
+#opacity{
+	height: 100vh;
+	opacity: 0.8;
+
+}
+
+h1{
+	font-family: 'Playfair Display', serif;
+	font-size: 100px;
+	color: white;
+	font-weight: bold;
+	margin-top: 92px;
+	
+}
+
 h3{
 	margin-left: 50%;
-	color: white;
+	color: white;	
 }
-h1{
-	color: white;
+
+#introText{
+
 }
+
+#access{ 
+	width: 500px;
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+#register{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	height: 300px;
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	
+}
+
+#login{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	height: 300px;
+	font-size: 20px;
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	
+}
+
+.reginput{
+	padding: 5px;
+	margin: 5px;
+	-webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+	border-radius: 20px;
+	
+}
+
+.loginput{
+	padding: 5px;
+	margin: 5px;
+	padding: 5px;
+	margin: 5px;
+	-webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+	border-radius: 20px;
+}
+
+#regtext{
+	width: 250px;
+	height: 100px;
+	font-size: 22px;
+
+
+
+}
+
+
+
+
+
+
+
+
