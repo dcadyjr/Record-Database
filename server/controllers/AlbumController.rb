@@ -44,8 +44,9 @@ class AlbumController < ApplicationController
 
 	post '/save' do
 		response['Access-Control-Allow-Origin'] = '*'
-		puts request_body
+
 		request_body = JSON.parse(request.body.read)
+		# puts request_body["id"]
 		album = Album.new
 		album_artist = request_body["title"].split(%r{ -\s*})[0]
 		album.artist = album_artist
@@ -53,7 +54,8 @@ class AlbumController < ApplicationController
 		album.name = album_name
 		album.release_year = request_body["year"]
 		album.image_url = request_body["thumb"]
-		#album.detail_url = request_body[]
+		id = request_body["id"].to_s
+		album.detail_url = 'https://api.discogs.com/masters/' + id
 		album.save
 		Album.all.to_json
 
