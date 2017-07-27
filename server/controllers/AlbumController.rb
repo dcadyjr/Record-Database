@@ -46,9 +46,7 @@ class AlbumController < ApplicationController
 		response['Access-Control-Allow-Origin'] = '*'
 
 		request_body = JSON.parse(request.body.read)
-		p request_body
 		album = Album.new(request_body)
-		p album
 		album.save
 		Album.all.to_json
 
