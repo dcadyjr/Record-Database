@@ -46,7 +46,7 @@ export class CollectionComponent implements OnInit {
   }
 
   saveAlbum(album){
-  	this.http.post('http://localhost:9393/albums/save', album).subscribe(response => {
+  	this.http.post('http://localhost:9393/albums/save?token=' + window.localStorage.token, album).subscribe(response => {
   		{this.albums = response.json()}
   	})
 
@@ -58,7 +58,7 @@ export class CollectionComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.http.get('http://localhost:9393/albums').subscribe(response => {
+  	this.http.get('http://localhost:9393/albums?token=' + window.localStorage.token).subscribe(response => {
   		this.albums = response.json()
   	})
   }

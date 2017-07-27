@@ -5,8 +5,10 @@ class AlbumController < ApplicationController
 
 
 	#get request to /albums
-	get '/' do 
-		albums = Album.all
+	get '/' do
+		token = params[:token]
+		user = User.find_by(:token => token)
+		albums = user.albums
 		albums.to_json
 	end
 
@@ -54,7 +56,7 @@ class AlbumController < ApplicationController
 		response['Access-Control-Allow-Origin'] = '*'
 
 		request_body = JSON.parse(request.body.read)
-		
+		token = params[:token]
 		album = Album.new
 		album.artist = request_body["title"].split(%r{ -\s*})[0]
 		album.name = request_body["title"].split(%r{ -\s*})[1]
@@ -63,7 +65,10 @@ class AlbumController < ApplicationController
 		album.detail_url = 'https://api.discogs.com/masters/' + request_body["id"].to_s
 		album.discogs_id = request_body["id"]
 		album.save
-		Album.all.to_json
+		user = User.find_by(:token => token)
+		user_record = UsersRecord.new(user_id: user.id, album_id: album.id)
+		user_record.save
+		user.albums.to_json
 
 	end
 

@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_many :usersrecords, class_name: 'UsersRecord'
-	has_many :album, through: :usersrecords
+	has_many :albums, through: :usersrecords
 
 end
