@@ -16,11 +16,15 @@
 
 <h1>Collection</h1>
 <div *ngFor="let album of albums">
-	<img id='albumImage' src="{{album.image_url}}">
+	<a (click)="getSavedDetails(album)">
+		<img id='albumImage' src="{{album.image_url}}">
+	</a>
 	<div>
 		<h3>{{album.name}}</h3>
 		<h3>{{album.artist}}</h3>
 		<h4>{{album.release_year}}</h4>
+
+		<button (click)="delete()">Delete</button>
 	</div>
 
 </div>

@@ -9,7 +9,7 @@ class Album{
 	artist: string;
 	release_year: number;
 	image_url: string;
-	tracks: string;
+	detail_url: string;
 }
 
 @Component({
@@ -41,11 +41,18 @@ export class CollectionComponent implements OnInit {
   	this.router.navigate(['/details', album.id])
   }
 
+  getSavedDetails(album){
+    this.router.navigate(['/details', album.discogs_id])
+  }
+
   saveAlbum(album){
   	this.http.post('http://localhost:9393/albums/save', album).subscribe(response => {
   		{this.albums = response.json()}
   		console.log(this.newAlbum);
   	})
+
+  }
+  delete(){
 
   }
 
