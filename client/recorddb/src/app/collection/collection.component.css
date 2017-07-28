@@ -2,3 +2,56 @@
 	height: 150px;
 	width: 150px;
 }
+
+#crate{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	border: 2px dotted black;
+	align-content: center;
+}
+
+#album{
+	width: 150px;
+}
+#info{
+	display: flex;
+	flex-direction: column;
+
+}
+#name{
+	font-family: 'Playfair Display', serif;
+	font-size: 13px;
+	margin-top: -13px;
+	text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#name:hover{
+	overflow: visible;
+	white-space: normal;
+}
+
+#artist{
+	font-family: 'Playfair Display', serif;
+	font-size: 13px;
+	margin-top: -24px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#artist:hover{
+	overflow: visible;
+	white-space: normal;
+}
+
+#year{
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	margin-top: -28px;
+
+}
