@@ -3,9 +3,15 @@
 	<h1>{{details.title}}</h1>
 	<h2>{{details.artists[0].name}}</h2>
 	<h3>{{details.year}}</h3>
-	<h4>Tracklisting</h4>
-	<div *ngFor="let track of tracks">
-		<li>{{track.title}} {{track.duration}}</li>
-	</div>
+	<table>
+		<tr>
+			<th>Tracks</th>
+			<th></th>
+		</tr>
+		<tr *ngFor="let track of tracks">
+			<td>{{track.title}}</td>
+			<td>{{track.duration}}</td>
+		</tr>
+	</table>
 
 </div>

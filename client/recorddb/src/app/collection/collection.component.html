@@ -1,26 +1,28 @@
 <button (click)="logout()">logout</button>
 
 <div id="search">
-	<h2 id="searchAlbums">Search Albums</h2>
+	<h2 id="searchAlbums">Find Albums</h2>
 	<input [(ngModel)]="newSearch.name" placeholder="artist or album"/>
 	<button (click)="search()">Search</button>
 </div>
 
 <!-- put this in the modal body -->
 <div id="results">
-	<div *ngFor="let record of records">
+	<div *ngFor="let record of records" id="result-album">
 		<div id="result-image">
 			<a (click)="getDetails(record)">
 				<img id='albumImage' src="{{record.thumb}}">
 			</a>
 		</div>
-		<div id="result-name">
-			<h3>{{record.title}}</h3>
+		<div id="info">
+			<div id="result-name">
+				<h3>{{record.title}}</h3>
+			</div>
+			<div id="result-year">
+				<h3>{{record.year}}</h3>
+			</div>
+			<button id="saveButton" (click)="saveAlbum(record)">Add to Crate</button>
 		</div>
-		<div id="result-year">
-			<h3>{{record.year}}</h3>
-		</div>
-		<button (click)="saveAlbum(record)">Add to Crate</button>
 	</div>
 </div>
 
@@ -28,9 +30,9 @@
 <div id="crate">
 	<div *ngFor="let album of albums" id="album">
 		<div id="image">
-		<a (click)="getSavedDetails(album)">
-			<img id='albumImage' src="{{album.image_url}}">
-		</a>
+			<a (click)="getSavedDetails(album)">
+				<img id='albumImage' src="{{album.image_url}}">
+			</a>
 		</div>
 		<div id="info">
 			<div id="name">
@@ -44,7 +46,6 @@
 			</div>
 			<button (click)="delete(album.id)">Delete</button>
 		</div>
-
 	</div>
 </div>
 
