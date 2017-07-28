@@ -7,20 +7,27 @@
 </div>
 
 <!-- put this in the modal body -->
-<div *ngFor="let record of records">
-
-	<a (click)="getDetails(record)">
-		<img src="{{record.thumb}}">
-	</a>
-	<li>{{record.title}}</li>
-	<li>{{record.year}}</li>
-	<button (click)="saveAlbum(record)">Add to Crate</button>
+<div id="results">
+	<div *ngFor="let record of records">
+		<div id="result-image">
+			<a (click)="getDetails(record)">
+				<img id='albumImage' src="{{record.thumb}}">
+			</a>
+		</div>
+		<div id="result-name">
+			<h3>{{record.title}}</h3>
+		</div>
+		<div id="result-year">
+			<h3>{{record.year}}</h3>
+		</div>
+		<button (click)="saveAlbum(record)">Add to Crate</button>
+	</div>
 </div>
 
 <h1>My Crate</h1>
 <div id="crate">
 	<div *ngFor="let album of albums" id="album">
-		<div id="iamge">
+		<div id="image">
 		<a (click)="getSavedDetails(album)">
 			<img id='albumImage' src="{{album.image_url}}">
 		</a>
