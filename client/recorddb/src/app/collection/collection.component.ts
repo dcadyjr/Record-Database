@@ -53,7 +53,7 @@ export class CollectionComponent implements OnInit {
 
   }
   delete(album){
-    this.http.delete('http://localhost:9393/albums/' + album).subscribe(response => {
+    this.http.delete('http://localhost:9393/albums/' + album + '?token=' + window.localStorage.token).subscribe(response => {
       this.albums = response.json()
     })
   }

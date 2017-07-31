@@ -86,12 +86,18 @@ class AlbumController < ApplicationController
 
 	# delete request to albums/id to delete an album from your collection
 	delete '/:id' do
-
+		response['Access-Control-Allow-Origin'] = '*'
+		token = params[:token]
+		user = User.find_by(:token => token)
+		puts user
 		id = params[:id]
 		album = Album.find(id)
-		album.destroy
+		puts album
+
+		user_record = UsersRecord.find_by(user_id: user.id, album_id: album.id)
+		user_record.destroy
 		albums = Album.all
-		albums.to_json
+		user.albums.to_json
 
 	end
 
