@@ -16,7 +16,7 @@ https://trello.com/b/0cf9Wzrx/record-database
 
 ## WireFrames
 
-![alt text](https://photos.app.goo.gl/fwZ8Lwddhak73m5F2)
+![screen shot](https://photos.app.goo.gl/fwZ8Lwddhak73m5F2 "screenshot")
 ![alt text](https://photos.app.goo.gl/guqqVTpGXrDGjIAs1)
 
 ## Schema
