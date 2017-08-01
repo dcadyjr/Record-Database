@@ -17,10 +17,10 @@ https://trello.com/b/0cf9Wzrx/record-database
 ## WireFrames
 
 ![screen shot](images/IMG_20170728_091400122.jpg "screenshot")
-![alt text](https://photos.app.goo.gl/guqqVTpGXrDGjIAs1)
+![screen shot](images/IMG_20170728_091416084.jpg "screenshot")
 
 ## Schema
-![alt text](http://imgur.com/a/U6HSG)
+![screen shot](images/ScreenShot.png "screenshot")
 
 
 ## Technologies Used
