@@ -13,19 +13,23 @@ class Album{
   discogs_id: number;
 }
 
+class Record{
+  title: string;
+  year: number;
+  thumb: string;
+}
+
 @Component({
   selector: 'app-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.css']
 })
+
 export class CollectionComponent implements OnInit {
 	albums: Album[] = [];
 	newAlbum: Album = new Album();
 	newSearch = {};
-	records = [];
-	details = [];
-  // modal == False
-	
+	records: Record[] = [];
 	
 
   constructor(private http: Http, private router: Router) {

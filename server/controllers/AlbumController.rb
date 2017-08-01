@@ -26,7 +26,7 @@ class AlbumController < ApplicationController
 
 		auth_wrapper = Discogs::Wrapper.new("My awesome web app", user_token: "JXIHTcvmYrJmSxdOHTOOsynymapkXxGjhsikOWLm")
 		search       = auth_wrapper.search(new_search["name"], :per_page => 10, :type => "master", :sort =>  "score", :sort_order => "desc")
-		puts search
+	
 		search.to_json
 		
 	end

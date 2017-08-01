@@ -14,6 +14,20 @@ class Album{
   discogs_id: number;
 }
 
+class Detail{
+  title: string;
+  artist: string;
+  images: string;
+  year: number;
+
+}
+
+class Track{
+  title: string;
+  duration: string;
+}
+
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -22,9 +36,8 @@ class Album{
 
 export class DetailsComponent implements OnInit {
   albums: Album[] = [];
-	details = {};
-	artists = {};
-	tracks = [];
+	details: Detail[] = [];
+	tracks: Track[] = [];
   images = {};
 
   constructor(private route: ActivatedRoute, private http: Http) { 
