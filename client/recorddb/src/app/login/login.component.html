@@ -9,10 +9,11 @@
 			<h3>Start Digging</h3>
 			<input [(ngModel)]="user.email" placeholder="email" class="loginput"/><br>
 			<input [(ngModel)]="user.password" placeholder="password"  class="loginput"><br>	
-			<button (click)="login()" class="loginput">Login</button>
+			<button (click)="login()" class="loginput" id="login_btn">Login</button>
 
 		</div>
+		<a (click)="goToJoin()"><div class="join">Join</div></a>
 	</div>
-	<a (click)="goToJoin()"><div class="join">Join</div></a>
+
 </div>
 

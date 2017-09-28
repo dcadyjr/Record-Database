@@ -11,9 +11,10 @@
 			<input [(ngModel)]="newUser.email" placeholder="email" class="reginput"/><br>
 			<input [(ngModel)]="newUser.password" placeholder="create password" class="reginput"/><br>
 			<input [(ngModel)]="newUser.screen_name" placeholder="screen name" class="reginput"><br>
-			<button (click)="register()" class="reginput">Submit</button>
+			<button (click)="register()" class="reginput" id="join_btn">Submit</button>
 		</div>
+		<a (click)="goToLogin()"><div class="login" >Login</div></a>
 	</div>
-	<a (click)="goToLogin()"><div class="login">Login</div></a>
+
 </div>
 
