@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CollectionComponent } from './collection/collection.component';
 import { DetailsComponent } from './details/details.component';
+import { JoinComponent } from './join/join.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent
+  },
+  {
+    path: 'register',
+    component: JoinComponent
   }
 
 ]
@@ -30,7 +35,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     CollectionComponent,
-    DetailsComponent
+    DetailsComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,

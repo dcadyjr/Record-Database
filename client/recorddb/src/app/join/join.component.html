@@ -1,0 +1,19 @@
+<div id="container">
+	<div id="introText">
+		<h1>crate</h1>
+	</div>
+
+	<div id="access">	
+		<div id="register">
+			<div id="regtext">
+				<h3>Ready to Rock?</h3>
+			</div>
+			<input [(ngModel)]="newUser.email" placeholder="email" class="reginput"/><br>
+			<input [(ngModel)]="newUser.password" placeholder="create password" class="reginput"/><br>
+			<input [(ngModel)]="newUser.screen_name" placeholder="screen name" class="reginput"><br>
+			<button (click)="register()" class="reginput">Submit</button>
+		</div>
+	</div>
+	<a (click)="goToLogin()"><div class="login">Login</div></a>
+</div>
+

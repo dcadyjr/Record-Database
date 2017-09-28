@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 	user = {};
-	newUser = {};
+	
 
 	//: User = new User();
 
@@ -33,13 +33,9 @@ export class LoginComponent implements OnInit {
   		
   	})
   }
-
-  register(){
-  	this.http.post('http://localhost:9393/users/register', this.newUser).subscribe(response => {
-  		window.localStorage.setItem('token', response.json().token)
-      this.router.navigate(['/collection'])
-
-  	})
+   goToJoin(){
+    
+    this.router.navigate(['/register'])
   }
 
   ngOnInit() {

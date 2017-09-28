@@ -5,23 +5,14 @@
 	</div>
 
 	<div id="access">	
-		<div id="register">
-			<div id="regtext">
-				<h3>Ready to Rock?</h3>
-			</div>
-			<input [(ngModel)]="newUser.email" placeholder="email" class="reginput"/><br>
-			<input [(ngModel)]="newUser.password" placeholder="create password" class="reginput"/><br>
-			<input [(ngModel)]="newUser.screen_name" placeholder="screen name" class="reginput"><br>
-			<button (click)="register()" class="reginput">Submit</button>
-		</div>
-
 		<div id="login">
 			<h3>Start Digging</h3>
 			<input [(ngModel)]="user.email" placeholder="email" class="loginput"/><br>
-			<input [(ngModel)]="user.password" placeholder="password"  class="loginput"><br>
+			<input [(ngModel)]="user.password" placeholder="password"  class="loginput"><br>	
 			<button (click)="login()" class="loginput">Login</button>
 
 		</div>
 	</div>
+	<a (click)="goToJoin()"><div class="join">Join</div></a>
 </div>
 
