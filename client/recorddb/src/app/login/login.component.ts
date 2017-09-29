@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
    goToJoin(){
     
-    this.router.navigate(['/register'])
+    this.router.navigate(['/users/register'])
   }
 
   ngOnInit() {

@@ -24,7 +24,7 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: 'register',
+    path: 'users/register',
     component: JoinComponent
   }
 

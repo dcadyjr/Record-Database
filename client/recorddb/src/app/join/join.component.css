@@ -137,7 +137,7 @@ h3{
 
 	text-align: center;
 }
-textarea:focus, input:focus{
+textarea:focus, input:focus, button:focus{
     outline: none;
 }
 
