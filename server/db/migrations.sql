@@ -1,3 +1,4 @@
+-- run this file with psql -a -f migrations.sql
 CREATE DATABASE record_collections;
 
 \c record_collections;
@@ -16,3 +17,5 @@ album_id INTEGER);
 
 ALTER TABLE users_records ADD FOREIGN KEY (user_id) REFERENCES users (id);
 ALTER TABLE users_records ADD FOREIGN KEY (album_id) REFERENCES albums (id);
+
+ALTER TABLE users ADD token VARCHAR(255);
