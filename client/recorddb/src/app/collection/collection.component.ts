@@ -13,6 +13,16 @@ class Album{
   discogs_id: number;
 }
 
+class Wish{
+  id: number;
+  name: string;
+  artist: string;
+  release_year: number;
+  image_url: string;
+  detail_url: string;
+  discogs_id: number;
+}
+
 class Record{
   title: string;
   year: number;
@@ -58,8 +68,8 @@ export class CollectionComponent implements OnInit {
   }
 
 //saves album and puts in My Wishlist
-  saveWishlist(album){ 
-    this.http.post('http://localhost:9393/albums/save?token=' + window.localStorage.token, album).subscribe(response => {
+  saveWish(album){ 
+    this.http.post('http://localhost:9393/wishes/save?token=' + window.localStorage.token, album).subscribe(response => {
       {this.albums = response.json()}
     })
   }

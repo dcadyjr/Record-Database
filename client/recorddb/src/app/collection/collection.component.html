@@ -22,7 +22,7 @@
 				<h3>{{record.year}}</h3>
 			</div>
 			<button id="saveButton" (click)="saveAlbum(record)">Add to Crate</button>
-			<button id="wishButton" (click)="saveWishlist(record)">Add to Wishlist</button>
+			<button id="wishButton" (click)="saveWish(record)">Add to Wishlist</button>
 		</div>
 	</div>
 </div>
@@ -52,7 +52,7 @@
 
 <h1>My Wishlist</h1>
 <div id="wishlist">
-	<div *ngFor="let album of albums" id="album">
+	<div *ngFor="let wish of wishes" id="wish">
 		<div id="image">
 			<a (click)="getSavedDetails(album)">
 				<img id='albumImage' src="{{album.image_url}}">

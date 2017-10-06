@@ -19,7 +19,7 @@ class AlbumController < ApplicationController
 		{album: album}.to_json
 	end
 
-	#post request to /albums. saves a new album to the users account
+	#post request to /albums. search for albums
 	post '/' do
 		new_search = JSON.parse(request.body.read)
 		
