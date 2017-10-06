@@ -50,12 +50,20 @@ export class CollectionComponent implements OnInit {
     this.router.navigate(['/details', album.discogs_id])
   }
 
-  saveAlbum(album){
+//saves album and puts in My Crate
+  saveAlbum(album){  
   	this.http.post('http://localhost:9393/albums/save?token=' + window.localStorage.token, album).subscribe(response => {
   		{this.albums = response.json()}
   	})
-
   }
+
+//saves album and puts in My Wishlist
+  saveWishlist(album){ 
+    this.http.post('http://localhost:9393/albums/save?token=' + window.localStorage.token, album).subscribe(response => {
+      {this.albums = response.json()}
+    })
+  }
+
   delete(album){
     this.http.delete('http://localhost:9393/albums/' + album + '?token=' + window.localStorage.token).subscribe(response => {
       this.albums = response.json()

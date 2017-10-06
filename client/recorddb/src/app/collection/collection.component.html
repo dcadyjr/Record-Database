@@ -22,13 +22,36 @@
 				<h3>{{record.year}}</h3>
 			</div>
 			<button id="saveButton" (click)="saveAlbum(record)">Add to Crate</button>
-			<button id="wishlist" (click)="saveAlbum(record)">Add to Wishlist</button>
+			<button id="wishButton" (click)="saveWishlist(record)">Add to Wishlist</button>
 		</div>
 	</div>
 </div>
 
 <h1>My Crate</h1>
 <div id="crate">
+	<div *ngFor="let album of albums" id="album">
+		<div id="image">
+			<a (click)="getSavedDetails(album)">
+				<img id='albumImage' src="{{album.image_url}}">
+			</a>
+		</div>
+		<div id="info">
+			<div id="name">
+				<h3>{{album.name}}</h3>
+			</div>
+			<div id="artist">
+				<h3>{{album.artist}}</h3>
+			</div>
+			<div id="year">
+				<h4>{{album.release_year}}</h4>
+			</div>
+			<button (click)="delete(album.id)">Delete</button>
+		</div>
+	</div>
+</div>
+
+<h1>My Wishlist</h1>
+<div id="wishlist">
 	<div *ngFor="let album of albums" id="album">
 		<div id="image">
 			<a (click)="getSavedDetails(album)">
