@@ -26,7 +26,7 @@ CREATE TABLE wishes (id SERIAL PRIMARY KEY, name VARCHAR(255), artist VARCHAR(25
 CREATE TABLE users_wishes (
 id SERIAL PRIMARY KEY,
 user_id INTEGER,
-album_id INTEGER);
+wish_id INTEGER);
 
 ALTER TABLE users_wishes ADD FOREIGN KEY (user_id) REFERENCES users (id);
-ALTER TABLE users_wishes ADD FOREIGN KEY (album_id) REFERENCES albums (id);
+ALTER TABLE users_wishes ADD FOREIGN KEY (wish_id) REFERENCES wishes (id);

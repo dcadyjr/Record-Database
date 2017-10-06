@@ -40,6 +40,8 @@ export class CollectionComponent implements OnInit {
 	newAlbum: Album = new Album();
 	newSearch = {};
 	records: Record[] = [];
+  wishes: Wish[] = [];
+  newWish: Wish = new Wish();
 	
 
   constructor(private http: Http, private router: Router) {
@@ -68,9 +70,9 @@ export class CollectionComponent implements OnInit {
   }
 
 //saves album and puts in My Wishlist
-  saveWish(album){ 
-    this.http.post('http://localhost:9393/wishes/save?token=' + window.localStorage.token, album).subscribe(response => {
-      {this.albums = response.json()}
+  saveWish(wish){ 
+    this.http.post('http://localhost:9393/wishes/save?token=' + window.localStorage.token, wish).subscribe(response => {
+      {this.wishes = response.json()}
     })
   }
 
