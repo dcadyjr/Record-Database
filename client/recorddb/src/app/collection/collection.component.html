@@ -54,12 +54,12 @@
 <div id="wishlist">
 	<div *ngFor="let wish of wishes" id="wish">
 		<div id="image">
-			<a (click)="getSavedDetails(album)">
+			<a (click)="getSavedWishDetails(wish)">
 				<img id='wishImage' src="{{wish.image_url}}">
 			</a>
 		</div>
 		<div id="info">
-			<div id="wishname">
+			<div id="name">
 				<h3>{{wish.name}}</h3>
 			</div>
 			<div id="artist">

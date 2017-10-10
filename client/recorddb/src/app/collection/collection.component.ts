@@ -62,6 +62,10 @@ export class CollectionComponent implements OnInit {
     this.router.navigate(['/details', album.discogs_id])
   }
 
+  getSavedWishDetails(wish){
+    this.router.navigate(['/details', wish.discogs_id])
+  }
+
 //saves album and puts in My Crate
   saveAlbum(album){  
   	this.http.post('http://localhost:9393/albums/save?token=' + window.localStorage.token, album).subscribe(response => {
@@ -76,12 +80,14 @@ export class CollectionComponent implements OnInit {
     })
   }
 
+//deletes album from My Crate
   delete(album){
     this.http.delete('http://localhost:9393/albums/' + album + '?token=' + window.localStorage.token).subscribe(response => {
       this.albums = response.json()
     })
   }
 
+//deletes album from My Wishlist
   wishdelete(wish){
     this.http.delete('http://localhost:9393/wishes/' + wish + '?token=' + window.localStorage.token).subscribe(response => {
       this.wishes = response.json()

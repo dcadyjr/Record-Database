@@ -93,7 +93,6 @@ class AlbumController < ApplicationController
 		id = params[:id]
 		album = Album.find(id)
 		
-
 		user_record = UsersRecord.find_by(user_id: user.id, album_id: album.id)
 		user_record.destroy
 		albums = Album.all
