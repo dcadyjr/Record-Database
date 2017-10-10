@@ -82,6 +82,12 @@ export class CollectionComponent implements OnInit {
     })
   }
 
+  wishdelete(wish){
+    this.http.delete('http://localhost:9393/wishes/' + wish + '?token=' + window.localStorage.token).subscribe(response => {
+      this.wishes = response.json()
+    })
+  }
+
   logout(){
     window.localStorage.clear();
     this.router.navigate(['/login'])

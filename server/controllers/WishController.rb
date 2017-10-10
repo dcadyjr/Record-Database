@@ -67,7 +67,7 @@ class WishController < ApplicationController
 		user = User.find_by(:token => token)
 	
 		id = params[:id]
-		album = Wish.find(id)
+		wish = Wish.find(id)
 	
 
 		user_wish = UsersWish.find_by(user_id: user.id, wish_id: wish.id)
