@@ -26,7 +26,7 @@ class WishController < ApplicationController
 
 	end
 
-	# post request to /wishes to save a album to your collection
+	# post request to /wishes to save a album to your wishlist
 	post '/save' do
 		response['Access-Control-Allow-Origin'] = '*'
 
@@ -41,12 +41,10 @@ class WishController < ApplicationController
 		wish.discogs_id = request_body["id"]
 		wish.save
 		user = User.find_by(:token => token)
-		puts "!!!!!!!!"
-		puts user
-
 		user_wish = UsersWish.new(user_id: user.id, wish_id: wish.id)
 		user_wish.save
 		user.wishes.to_json
+
 
 	end
 
