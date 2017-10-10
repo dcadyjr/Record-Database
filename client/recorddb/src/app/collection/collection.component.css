@@ -3,6 +3,11 @@
 	width: 150px;
 }
 
+#wishImage{
+	height: 150px;
+	width: 150px;
+}
+
 #crate{
 	width: 1200px;
 	height: 100%;
@@ -15,6 +20,17 @@
 }
 
 #results{
+	width: 1200px;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	margin: 0 auto;
+}
+
+#wishlist{
 	width: 1200px;
 	height: 100%;
 	display: flex;

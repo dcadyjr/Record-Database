@@ -91,6 +91,10 @@ export class CollectionComponent implements OnInit {
   	this.http.get('http://localhost:9393/albums?token=' + window.localStorage.token).subscribe(response => {
   		this.albums = response.json()
   	})
+
+    this.http.get('http://localhost:9393/wishes?token=' + window.localStorage.token).subscribe(response => {
+      this.wishes = response.json()
+    })
   }
 
 }
