@@ -1,9 +1,11 @@
 <button (click)="logout()">logout</button>
 <button (click)="goToCrate()">My Crate</button>
 <button (click)="goToWishlist()">My Wishlist</button>
+<button (click)="goToSearch()" id="searchAlbums">Find Albums</button>
+<h1 *ngIf="showCrate">My Crate</h1>
+<h1 *ngIf="showWish">My Wishlist</h1>
 
-<div id="search">
-	<h2 id="searchAlbums">Find Albums</h2>
+<div *ngIf="showSearch" id="search">	
 	<input [(ngModel)]="newSearch.name" placeholder="artist or album"/>
 	<button (click)="search()">Search</button>
 </div>
@@ -30,32 +32,34 @@
 </div>
 
 
-<div *ngIf="showCrate" id="crate">
-	<h1>My Crate</h1>
-	<div *ngFor="let album of albums"  id="album">
-		<div id="image">
+<div *ngIf="showCrate" >
+	
+	<tr *ngFor="let album of albums"  id="album">
+
+
+		<td id="image">
 			<a (click)="getSavedDetails(album)">
 				<img id='albumImage' src="{{album.image_url}}">
 			</a>
-		</div>
-		<div id="info">
-			<div id="name">
+		</td>
+		<!-- <div id="info"> -->
+			<td id="name">
 				<h3>{{album.name}}</h3>
-			</div>
-			<div id="artist">
+			</td>
+			<td id="artist">
 				<h3>{{album.artist}}</h3>
-			</div>
-			<div id="year">
+			</td>
+			<td id="year">
 				<h4>{{album.release_year}}</h4>
-			</div>
+			</td>
 			<button (click)="delete(album.id)">Delete</button>
-		</div>
-	</div>
+		<!-- </div> -->
+	</tr>
 </div>
 
 
 <div *ngIf="showWish" id="wishlist">
-	<h1>My Wishlist</h1>
+
 	<div *ngFor="let wish of wishes" id="wish">
 		<div id="image">
 			<a (click)="getSavedWishDetails(wish)">

@@ -42,9 +42,11 @@ export class CollectionComponent implements OnInit {
 	records: Record[] = [];
   wishes: Wish[] = [];
   newWish: Wish = new Wish();
-  showSearch: Boolean = true;
+  showSearch: Boolean = false;
 	showCrate: Boolean = true;
   showWish: Boolean = false;
+
+
 
   constructor(private http: Http, private router: Router) {
 
@@ -113,6 +115,12 @@ export class CollectionComponent implements OnInit {
       this.showCrate = false;
       this.showWish = true;
       this.showSearch = false;
+
+  }
+  goToSearch(){
+      this.showCrate = false;
+      this.showWish = false;
+      this.showSearch = true;
 
   }
 

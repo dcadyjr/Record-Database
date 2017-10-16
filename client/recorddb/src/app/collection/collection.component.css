@@ -1,6 +1,6 @@
 #albumImage{
-	height: 150px;
-	width: 150px;
+	height: 50px;
+	width: 50px;
 }
 
 #wishImage{
@@ -9,7 +9,7 @@
 }
 
 #crate{
-	width: 1200px;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -17,10 +17,22 @@
 	justify-content: flex-start;
 	align-content: flex-start;
 	margin: 0 auto;
+	overflow: hidden;
+    white-space: nowrap;
 }
+td{
+     width:20%;
+     float:left;
+     word-wrap:break-word;
+    
 
+}
+tr{
+
+
+}
 #results{
-	width: 1200px;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -31,7 +43,7 @@
 }
 
 #wishlist{
-	width: 1200px;
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -44,6 +56,7 @@
 #album{
 	width: 150px;
 	padding: 5px;
+	 border: 1px solid black;
 }
 
 #wish{
@@ -64,16 +77,19 @@
 #name{
 	font-family: 'Playfair Display', serif;
 	font-size: 13px;
-	margin-top: -13px;
+	//margin-top: -13px;
 	text-align: left;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-overflow: fade(10px);
+    margin-right: 10px;
 }
 
 #name:hover{
 	overflow: visible;
 	white-space: normal;
+	
 }
 
 #result-name{
@@ -84,8 +100,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+      margin-right: 10px;
 }
-
 #result-name:hover{
 	overflow: visible;
 	white-space: normal;
@@ -94,10 +110,12 @@
 #artist{
 	font-family: 'Playfair Display', serif;
 	font-size: 13px;
-	margin-top: -24px;
+	//margin-top: -24px;
 	overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+	 margin-right: 10px;
+
 }
 
 #artist:hover{
@@ -108,7 +126,7 @@
 #year{
 	font-family: 'Playfair Display', serif;
 	font-size: 12px;
-	margin-top: -28px;
+	//margin-top: -28px;
 }
 
 #result-year{
