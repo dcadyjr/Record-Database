@@ -42,14 +42,20 @@ export class CollectionComponent implements OnInit {
 	records: Record[] = [];
   wishes: Wish[] = [];
   newWish: Wish = new Wish();
-	
+  showSearch: Boolean = true;
+	showCrate: Boolean = true;
+  showWish: Boolean = false;
 
   constructor(private http: Http, private router: Router) {
+
    }
 
   search(){
   	this.http.post('http://localhost:9393/albums', this.newSearch).subscribe(response => {
   		
+      this.showSearch = true;
+      this.showCrate = false;
+      this.showWish = false;
   		this.records = response.json().results;
   	})
   }
@@ -97,6 +103,17 @@ export class CollectionComponent implements OnInit {
   logout(){
     window.localStorage.clear();
     this.router.navigate(['/login'])
+  }
+  goToCrate(){
+      this.showCrate = true;
+      this.showWish = false;
+      this.showSearch = false;
+  }
+  goToWishlist(){
+      this.showCrate = false;
+      this.showWish = true;
+      this.showSearch = false;
+
   }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
 <button (click)="logout()">logout</button>
+<button (click)="goToCrate()">My Crate</button>
+<button (click)="goToWishlist()">My Wishlist</button>
 
 <div id="search">
 	<h2 id="searchAlbums">Find Albums</h2>
@@ -7,7 +9,7 @@
 </div>
 
 <!-- put this in the modal body -->
-<div id="results">
+<div *ngIf="showSearch" id="results">
 	<div *ngFor="let record of records" id="result-album">
 		<div id="result-image">
 			<a (click)="getDetails(record)">
@@ -27,8 +29,9 @@
 	</div>
 </div>
 
-<h1>My Crate</h1>
-<div id="crate">
+
+<div *ngIf="showCrate" id="crate">
+	<h1>My Crate</h1>
 	<div *ngFor="let album of albums"  id="album">
 		<div id="image">
 			<a (click)="getSavedDetails(album)">
@@ -50,8 +53,9 @@
 	</div>
 </div>
 
-<h1>My Wishlist</h1>
-<div id="wishlist">
+
+<div *ngIf="showWish" id="wishlist">
+	<h1>My Wishlist</h1>
 	<div *ngFor="let wish of wishes" id="wish">
 		<div id="image">
 			<a (click)="getSavedWishDetails(wish)">
