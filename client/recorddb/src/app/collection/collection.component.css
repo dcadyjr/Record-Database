@@ -26,6 +26,7 @@ td{
      width:20%;
      float:left;
      word-wrap: break-word;
+     color: white;
 
     
 
@@ -38,7 +39,7 @@ hr{
 
 	height: 12px;
     border: 0;
-    box-shadow: inset 0 6px 6px -6px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 6px 6px -6px rgba(197, 201, 207, 0.5);
 }
 #image{
 
@@ -151,13 +152,32 @@ hr{
 
 	margin-left: 100px;
 	float: right;
-	margin-top: -18px;
+	margin-top: -22px;
+
 
 
 }
+#main_body{
+
+	background-color: rgb(24, 24, 24);
+	height: 100vh;
+}
+#button_delete{
+
+	color:white;	
+}
 #album_list{
 
-	margin-left: 5px;
+	margin-left: 10px;
+}
+#title{
+
+	text-align: center;
+	color: white;
+}
+button{
+
+	color: white;
 }
 
 

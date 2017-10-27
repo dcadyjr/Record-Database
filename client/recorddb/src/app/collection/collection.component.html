@@ -1,9 +1,13 @@
+<div id="main_body">
 <button (click)="logout()">logout</button>
 <button (click)="goToCrate()">My Crate</button>
 <button (click)="goToWishlist()">My Wishlist</button>
 <button (click)="goToSearch()" id="searchAlbums">Find Albums</button>
-<h1 *ngIf="showCrate">My Crate</h1>
-<h1 *ngIf="showWish">My Wishlist</h1>
+<div id="title">
+	<h1 *ngIf="showCrate">My Crate</h1>
+	<h1 *ngIf="showWish">My Wishlist</h1>
+</div>
+
 
 <div *ngIf="showSearch" id="search">	
 	<input [(ngModel)]="newSearch.name" placeholder="artist or album"/>
@@ -54,7 +58,7 @@
 				<h4>{{album.release_year}}</h4>
 			</td>
 			<td id="delete_btn">
-				<button  (click)="delete(album.id)">Delete</button>
+				<button id="button_delete"  (click)="delete(album.id)"><i class="material-icons">delete_forever</i></button>
 			</td>
 			
 		<!-- </div> -->
@@ -83,6 +87,8 @@
 			<button (click)="wishdelete(wish.id)">Delete</button>
 		</div>
 	</div>
+</div>
+
 </div>
 
 
