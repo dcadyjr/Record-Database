@@ -1,3 +1,5 @@
+	
+
 #albumImage{
 	height: 50px;
 	width: 50px;
@@ -23,13 +25,24 @@
 td{
      width:20%;
      float:left;
-     word-wrap:break-word;
+     word-wrap: break-word;
+
     
 
 }
 tr{
+	     border-bottom: 1px solid red;
 
+}
+hr{
 
+	height: 12px;
+    border: 0;
+    box-shadow: inset 0 6px 6px -6px rgba(0, 0, 0, 0.2);
+}
+#image{
+
+	margin-left: 5px;
 }
 #results{
 	width: 100%;
@@ -57,6 +70,7 @@ tr{
 	width: 150px;
 	padding: 5px;
 	 border: 1px solid black;
+
 }
 
 #wish{
@@ -77,12 +91,11 @@ tr{
 #name{
 	font-family: 'Playfair Display', serif;
 	font-size: 13px;
-	//margin-top: -13px;
+	margin-top: 13px;
 	text-align: left;
-    overflow: hidden;
+   
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-overflow: fade(10px);
     margin-right: 10px;
 }
 
@@ -95,12 +108,11 @@ tr{
 #result-name{
 	font-family: 'Playfair Display', serif;
 	font-size: 13px;
-	margin-top: -13px;
 	text-align: left;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-      margin-right: 10px;
+    margin-right: 10px;
 }
 #result-name:hover{
 	overflow: visible;
@@ -110,10 +122,10 @@ tr{
 #artist{
 	font-family: 'Playfair Display', serif;
 	font-size: 13px;
-	//margin-top: -24px;
+	margin-top: 13px;
 	overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+
 	 margin-right: 10px;
 
 }
@@ -126,13 +138,26 @@ tr{
 #year{
 	font-family: 'Playfair Display', serif;
 	font-size: 12px;
-	//margin-top: -28px;
+	 white-space: nowrap;
+	margin-top: 13px;
 }
 
 #result-year{
 	font-family: 'Playfair Display', serif;
 	font-size: 12px;
-	margin-top: -28px;
+
+}
+#delete_btn{
+
+	margin-left: 100px;
+	float: right;
+	margin-top: -18px;
+
+
+}
+#album_list{
+
+	margin-left: 5px;
 }
 
 

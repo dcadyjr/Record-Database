@@ -32,27 +32,31 @@
 </div>
 
 
-<div *ngIf="showCrate" >
+<div *ngIf="showCrate" id="album_list">
 	
 	<tr *ngFor="let album of albums"  id="album">
 
-
+		<hr>
 		<td id="image">
 			<a (click)="getSavedDetails(album)">
 				<img id='albumImage' src="{{album.image_url}}">
 			</a>
 		</td>
+
 		<!-- <div id="info"> -->
-			<td id="name">
+			<td id="name" ellipsis ellipsis-resize-detection>
 				<h3>{{album.name}}</h3>
 			</td>
-			<td id="artist">
+			<td id="artist" ellipsis ellipsis-resize-detection>
 				<h3>{{album.artist}}</h3>
 			</td>
-			<td id="year">
+			<td id="year" ellipsis ellipsis-resize-detection>
 				<h4>{{album.release_year}}</h4>
 			</td>
-			<button (click)="delete(album.id)">Delete</button>
+			<td id="delete_btn">
+				<button  (click)="delete(album.id)">Delete</button>
+			</td>
+			
 		<!-- </div> -->
 	</tr>
 </div>

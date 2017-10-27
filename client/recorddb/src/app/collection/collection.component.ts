@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
 import { NgForOf } from '@angular/common';
+import { EllipsisModule } from 'ngx-ellipsis';
 
 class Album{
 	id: number;

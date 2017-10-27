@@ -3,38 +3,29 @@ body{
 	
 }
 #container{
-	//http://assets.dornob.com/wp-content/uploads/2015/06/record-collection.jpg;
-	 background-image: url("../../assets/images/records_background.jpg"); 
+	background-image: url("../../assets/images/records_background.jpg"); 
   	background-repeat: none;
-  background-size: cover;
+  	background-size: cover;
 	height: 100vh;
 	width: 100%;
 	display: flex;
-	//background-color: red;
 	flex-direction: column;
 
-	// justify-content: center;
-	// align-items: center;
+
 }
 
 #opacity{
-	// height: 100vh;
-	// opacity: 0.8;
+
 
 }
 
 h1{
-	 font-family: 'Playfair Display', serif;
-	// font-size: 100px;
-	// color: white;
-	// font-weight: bold;
-	// margin-top: -45px;	
+	 font-family: 'Playfair Display', serif;	
 	
 }
 
 h3{
-	// margin-left: 50%;
-	// color: white;	
+
 }
 
 #introText{
@@ -51,49 +42,26 @@ h3{
 	flex-grow:1;
 	color: white;
 	
-	// width: 500px;
-	// height: 300px;
-	// display: flex;
-	// flex-direction: row;
-	// justify-content: space-between;
-	// align-items: center;
-	
 }
 
 #register{
-	// display: flex;
-	// flex-direction: column;
+
 	text-align: center;
-	// justify-content: center;
-	// align-items: center;
-	// width: 250px;
-	// height: 300px;
 	font-family: 'Playfair Display', serif;
-	// font-weight: bold;
+	
 	
 }
 
 #login{
 	
 	text-align: center;
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-	// align-items: center;
-	// width: 250px;
-	// height: 300px;
-	// font-size: 20px;
 	font-family: 'Playfair Display', serif;
 	 font-weight: bold;
 	
 }
 
 .reginput{
-	// padding: 5px;
-	// margin: 5px;
-	// -webkit-border-radius: 50px;
-	// -moz-border-radius: 50px;
-	// border-radius: 20px;
+
 	width: 80%;
   	height: 30px;
  	margin-bottom: 30px;
@@ -104,13 +72,7 @@ h3{
 }
 
 .loginput{
-	// padding: 5px;
-	// margin: 5px;
-	// padding: 5px;
-	// margin: 5px;
-	// -webkit-border-radius: 50px;
-	// -moz-border-radius: 50px;
-	// border-radius: 20px;
+
 	width: 80%;
   	height: 30px;
  	margin-bottom: 30px;
@@ -126,9 +88,6 @@ h3{
 
 }
 #regtext{
-	// width: 250px;
-	// height: 100px;
-	// font-size: 22px;
 
 
 
